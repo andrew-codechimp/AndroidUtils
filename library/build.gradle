@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 22
-        versionCode 5
-        versionName "1.5"
+        versionCode 6
+        versionName "1.6"
     }
     buildTypes {
         release {
@@ -27,20 +27,11 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
 
-android.libraryVariants.all { variant ->
-    def name = variant.buildType.name
-    def task = project.tasks.create "jar${name.capitalize()}", Jar
-    task.dependsOn variant.javaCompile
-    task.from variant.javaCompile.destinationDir
-    artifacts.add('archives', task);
-}
-
 // build a jar with source files
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
     classifier = 'sources'
 }
-
 artifacts {
     archives sourcesJar
 }
