@@ -1,6 +1,6 @@
 # CodeChimp Android Utils
 
-[![Release](https://img.shields.io/github/release/andrew-codechimp/androidutils.svg?label=maven)](https://github.com/andrew-codechimp/androidutils)
+[![Release](https://img.shields.io/github/release/andrew-codechimp/androidutils.svg?label=JitPack)](https://github.com/andrew-codechimp/androidutils)
 
 A library of common misc code for Android apps.
 
