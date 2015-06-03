@@ -4,7 +4,28 @@
 
 A library of common misc code for Android apps.
 
-This is not designed to be a everything to everyone lib, just the bits I find useful.
+This is not designed to be an everything to everyone lib, just the bits I find useful.
+
+## Install
+
+**Step 1:** Add the JitPack repository to your build file
+```groovy
+allprojects {
+    repositories {
+        jcenter()
+        maven {
+            url "https://jitpack.io"
+        }
+    }
+}
+```
+
+**Step 2:** Add the dependency in the form
+```groovy
+dependencies {
+    compile 'com.github.andrew-codechimp:androidutils:1.+'
+}
+```
 
 ## Maintained By
 
