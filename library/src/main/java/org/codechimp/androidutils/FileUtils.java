@@ -45,8 +45,10 @@ public class FileUtils {
         }
     }
 
+
     /**
-     * Returns whether an SD card is present and writable *
+     * Check if SD card is present
+     * @return true if an SD card is present
      */
     public static boolean sdIsPresent() {
         return Environment.getExternalStorageState().equals(
@@ -55,6 +57,12 @@ public class FileUtils {
 
     private static final int BUFFER_SIZE = 8192;
 
+    /**
+     * Open a file and return its contents in a String
+     * @param file - File to open
+     * @return File contents
+     * @throws IOException
+     */
     public static String readTextFile(File file) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"), BUFFER_SIZE);
         try {
@@ -69,6 +77,12 @@ public class FileUtils {
         }
     }
 
+    /**
+     * Open a file and return its contents as a byte array
+     * @param file - File to open
+     * @return File contents
+     * @throws IOException
+     */
     public static byte[] readBinaryFile(File file) throws IOException {
         FileInputStream fis = new FileInputStream(file);
 
