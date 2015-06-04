@@ -9,6 +9,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.channels.FileChannel;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import android.os.Environment;
 
@@ -48,9 +50,10 @@ public class FileUtils {
 
     /**
      * Check if SD card is present
+     *
      * @return true if an SD card is present
      */
-    public static boolean sdIsPresent() {
+    public static boolean isSdPresent() {
         return Environment.getExternalStorageState().equals(
                 Environment.MEDIA_MOUNTED);
     }
@@ -59,6 +62,7 @@ public class FileUtils {
 
     /**
      * Open a file and return its contents in a String
+     *
      * @param file - File to open
      * @return File contents
      * @throws IOException
@@ -79,6 +83,7 @@ public class FileUtils {
 
     /**
      * Open a file and return its contents as a byte array
+     *
      * @param file - File to open
      * @return File contents
      * @throws IOException
@@ -101,5 +106,41 @@ public class FileUtils {
         } finally {
             fis.close();
         }
+    }
+
+    /**
+     * Generate the SHA1 for a file
+     *
+     * @param file - file to generate SHA1 for
+     * @return SHA1 for passed file
+     * @throws IOException
+     * @throws NoSuchAlgorithmException
+     */
+    public String getSha1ForFile(File file) throws IOException, NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("SHA1");
+        FileInputStream fis = new FileInputStream(file);
+        String out = null;
+        try {
+            byte[] dataBytes = new byte[1024];
+
+            int nread = 0;
+
+            while ((nread = fis.read(dataBytes)) != -1) {
+                md.update(dataBytes, 0, nread);
+            }
+            ;
+
+            byte[] mdbytes = md.digest();
+
+            //convert the byte to hex format
+            StringBuffer sb = new StringBuffer("");
+            for (int i = 0; i < mdbytes.length; i++) {
+                sb.append(Integer.toString((mdbytes[i] & 0xff) + 0x100, 16).substring(1));
+            }
+            out = sb.toString();
+        } finally {
+            fis.close();
+        }
+        return out;
     }
 }

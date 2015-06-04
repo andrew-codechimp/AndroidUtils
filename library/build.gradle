@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 22
-        versionCode 12
-        versionName "1.12"
+        versionCode 13
+        versionName "1.13"
     }
     buildTypes {
         release {
@@ -41,7 +41,7 @@ task javadocs(type: Javadoc) {
     options.links("http://docs.oracle.com/javase/7/docs/api/");
     options.links("http://d.android.com/reference/");
     exclude '**/BuildConfig.java'
-//    exclude '**/R.java'
+    exclude '**/R.java'
 }
 
 task javadocsJar(type: Jar, dependsOn: javadocs) {
