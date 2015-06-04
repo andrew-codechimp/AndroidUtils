@@ -7,7 +7,8 @@ A library of common misc code for Android apps.
 This is not designed to be an everything to everyone lib, just the bits I find useful.
 I would suggest forking and using your own variant as things are likely to be broken over time.
 
-## [https://jitpack.io/com/github/andrew-codechimp/androidutils/1.9/javadoc/](Documentation)
+## Documentation
+https://jitpack.io/com/github/andrew-codechimp/androidutils/1.x/javadoc/
 
 ## Install
 
