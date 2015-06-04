@@ -24,8 +24,8 @@ public class FileUtils {
      * <i> Note: <code>fromFile</code> and <code>toFile</code> will be closed by
      * this function.</i>
      *
-     * @param fromFile - FileInputStream for the file to copy from.
-     * @param toFile   - FileInputStream for the file to copy to.
+     * @param fromFile FileInputStream for the file to copy from.
+     * @param toFile   FileInputStream for the file to copy to.
      */
     public static void copyFile(FileInputStream fromFile, FileOutputStream toFile) throws IOException {
         FileChannel fromChannel = null;
@@ -63,7 +63,7 @@ public class FileUtils {
     /**
      * Open a file and return its contents in a String
      *
-     * @param file - File to open
+     * @param file File to open
      * @return File contents
      * @throws IOException
      */
@@ -84,7 +84,7 @@ public class FileUtils {
     /**
      * Open a file and return its contents as a byte array
      *
-     * @param file - File to open
+     * @param file File to open
      * @return File contents
      * @throws IOException
      */
@@ -111,7 +111,7 @@ public class FileUtils {
     /**
      * Generate the SHA1 for a file
      *
-     * @param file - file to generate SHA1 for
+     * @param file File to generate SHA1 for
      * @return SHA1 for passed file
      * @throws IOException
      * @throws NoSuchAlgorithmException

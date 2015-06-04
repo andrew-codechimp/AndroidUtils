@@ -9,7 +9,7 @@ public class ConnectivityUtils {
     /**
      * Determine if there is a network connection available
      *
-     * @param context - The Context to use when necessary
+     * @param context The Context to use when necessary
      * @return true if there is a network connection
      */
     public static boolean isNetworkConnected(Context context) {
@@ -25,7 +25,7 @@ public class ConnectivityUtils {
     /**
      * Determine if there is a Wifi network connection
      *
-     * @param context - The Context to use when necessary
+     * @param context The Context to use when necessary
      * @return true if there is a network connection
      */
     public static boolean isWifiConnected(Context context) {

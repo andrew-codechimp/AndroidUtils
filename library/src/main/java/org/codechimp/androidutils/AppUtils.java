@@ -9,7 +9,7 @@ public class AppUtils {
     /**
      * Get the version name for the current application, useful for about info
      *
-     * @param context - The Context to use when necessary
+     * @param context The Context to use when necessary
      * @return The version name for the application
      */
     public static String getVersionName(Context context) {
@@ -25,7 +25,7 @@ public class AppUtils {
     /**
      * Get the version code for the current application
      *
-     * @param context - The Context to use when necessary
+     * @param context The Context to use when necessary
      * @return The version code for the application
      */
     public static int getVersionCode(Context context) {
