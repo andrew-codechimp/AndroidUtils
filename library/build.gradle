@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 22
-        versionCode 16
-        versionName "1.16"
+        versionCode 17
+        versionName "1.17"
     }
     buildTypes {
         release {
@@ -25,6 +25,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:22.1.1'
     compile 'com.android.support:recyclerview-v7:21.0.3'
 }
 
@@ -43,6 +44,7 @@ task javadocs(type: Javadoc) {
     options.links("http://d.android.com/reference/");
     exclude '**/BuildConfig.java'
     exclude '**/R.java'
+    failOnError false
 }
 
 task javadocsJar(type: Jar, dependsOn: javadocs) {
